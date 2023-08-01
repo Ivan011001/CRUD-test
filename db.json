@@ -2,9 +2,9 @@
   "books": [
     {
       "id": 1,
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "publicationYear": 1925,
+      "title": "New book",
+      "author": "Me",
+      "publicationYear": 2023,
       "genre": "Fiction",
       "isbn": "978-0743273565"
     },
@@ -159,6 +159,12 @@
       "publicationYear": 1988,
       "genre": "Fiction",
       "isbn": "978-0061122415"
+    },
+    {
+      "title": "New book",
+      "author": "Me",
+      "publicationYear": 2023,
+      "id": 21
     }
   ]
 }

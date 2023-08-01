@@ -117,3 +117,121 @@
 // function getAllBooks() {
 //   return axios.get('http://localhost:3000/books');
 // }
+
+// async function fetchUsers() {
+//   const response = await fetch(`${BASE_URL}/users`);
+//   const users = await response.json();
+//   return users;
+// }
+
+// const fetchUsers = async () => {
+//   const response = await fetch(`${BASE_URL}/users`);
+//   const users = await response.json();
+//   return users;
+// };
+
+// fetchUsers().then(console.log).catch(console.error);
+
+// async function fetchUsers() {
+//   // try {
+//   // const response = await fetch(`${BASE_URL}/users`);
+//   // const users = await response.json();
+//   //   console.log(users);
+//   // } catch (error) {
+//   //   console.log(error.message);
+//   // }
+
+//   const response = await fetch(`${BASE_URL}/users`);
+//   const users = await response.json();
+//   return users;
+// }
+
+// fetchUsers().then(console.log).catch(console.error);
+
+// async function fetchUsers() {
+//   const r = await fetch(`${BASE_URL}/users`);
+//   const users = await r.json();
+//   return users;
+// }
+
+// async function doStuff() {
+//   try {
+//     const users = await fetchUsers();
+//     console.log(users);
+//   } catch (error) {
+//     console.timeLog(error.message);
+//   }
+// }
+
+// doStuff()
+
+// const fetchUsers = async () => {
+// const BASE_URL = 'https://jsonplaceholder.typicode.com';
+//   const first = await fetch(`${BASE_URL}/users/1`);
+//   const second = await fetch(`${BASE_URL}/users/2`);
+//   const third = await fetch(`${BASE_URL}/users/3`);
+
+//   const firstUser = await first.json();
+//   const secondUser = await second.json();
+//   const thirdUser = await third.json();
+
+//   console.log(firstUser, secondUser, thirdUser);
+// };
+
+// fetchUsers();
+
+// const fetchUsers = async () => {
+//   const BASE_URL = 'https://jsonplaceholder.typicode.com';
+//   const usersIds = [1, 2, 3];
+
+//   const arrayOfPromises = usersIds.map(async userId => {
+//     const response = await fetch(`${BASE_URL}/users/${userId}`);
+//     return response.json();
+//   });
+
+//   const users = await Promise.all(arrayOfPromises);
+//   return users;
+// };
+
+// fetchUsers().then(console.log).catch(console.error);
+
+const fetchBtnRef = document.querySelector('button');
+const listRef = document.querySelector('ul');
+
+fetchBtnRef.addEventListener('click', async () => {
+  try {
+    const users = await fetchUsers();
+    renderMarkup(users);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
+
+async function fetchUsers() {
+  const BASE_URL = 'https://jsonplaceholder.typicode.com';
+  const userIds = [1, 2, 3, 4, 5];
+
+  const arrayOfPromises = userIds.map(async userId => {
+    const response = await fetch(`${BASE_URL}/users/${userId}`);
+    return response.json();
+  });
+
+  const users = await Promise.all(arrayOfPromises);
+  return users;
+}
+
+function renderMarkup(users) {
+  const markup = users
+    .map(user => {
+      return `<li class="item"><p>${user.name}</p><p>${user.username}</p><p>${user.email}</p></li>`;
+    })
+    .join('');
+
+  listRef.innerHTML = markup;
+}
+
+
+// fetch(`${BASE_URL}/users`)
+//   .then(r => r.json())
+//   .then(console.log)
+//   .catch(console.error);

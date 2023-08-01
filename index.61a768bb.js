@@ -1,0 +1,2 @@
+const e=document.querySelector("button"),n=document.querySelector("ul");e.addEventListener("click",(async()=>{try{!function(e){const t=e.map((e=>`<li class="item"><p>${e.name}</p><p>${e.username}</p><p>${e.email}</p></li>`)).join("");n.innerHTML=t}(await async function(){const e="https://jsonplaceholder.typicode.com",n=[1,2,3,4,5].map((async n=>(await fetch(`${e}/users/${n}`)).json()));return await Promise.all(n)}())}catch(e){console.log(e.message)}}));
+//# sourceMappingURL=index.61a768bb.js.map

@@ -5,7 +5,8 @@
   "homepage": "https://Ivan011001.github.io/CRUD-test",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /CRUD-test/"
+    "build": "parcel build src/*.html --public-url /CRUD-test/",
+    "server": "json-server --watch db.json"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "json-server": "^0.17.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"

@@ -2,11 +2,11 @@
   "books": [
     {
       "id": 1,
-      "title": "New book",
-      "author": "Me",
-      "publicationYear": 2023,
-      "genre": "Fiction",
-      "isbn": "978-0743273565"
+      "title": "1984",
+      "author": "George Orwell",
+      "publicationYear": 1949,
+      "genre": "Science Fiction",
+      "isbn": "978-0451524935"
     },
     {
       "id": 2,
